@@ -1,6 +1,7 @@
-import {IndividualNote} from "./individualNote";
+import {IndividualNote} from "./individual-note";
 
 export interface SongSection {
+  songSectionId: number;
   songSectionName: string;
   songSectionMusicNotes?: Array<IndividualNote>;
 }

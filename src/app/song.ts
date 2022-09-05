@@ -1,6 +1,6 @@
-import { SongSection } from "./songSection";
+import { SongSection } from "./song-section";
 
-export interface Item {
+export interface Song {
   songTitle: string;
   originalArtist?: string;
   songComposition?: Array<SongSection>;
