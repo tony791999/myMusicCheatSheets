@@ -36,7 +36,7 @@
     class="lg-text-input"
     id="addSongSection"
   />
-  <button class="btn-primary" (click)="addSongSection(newSongSection.value, selectedSong?.songComposition?.length ?? 0)">Add Song Section</button>
+  <button class="btn-primary" (click)="addSongSection(newSongSection.value, selectedSong.songComposition?.length ?? 0)">Add Song Section</button>
   <ul>
     <li *ngFor="let songSection of selectedSong.songComposition">
       {{ songSection.songSectionName }}
