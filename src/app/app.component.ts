@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-music-cheat-sheets';
+  title = 'my-music-cheat-sheets 2';
 
   filter: 'all' | 'active' | 'readyToPerform' = 'all';
 
