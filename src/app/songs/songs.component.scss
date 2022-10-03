@@ -1,90 +1,18 @@
-/* HeroesComponent's private CSS styles */
-.songs {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
-}
-
-.songs li {
-  display: flex;
-}
-
-.songs button {
-  flex: 1;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: 0;
-  border-radius: 4px;
-  display: flex;
-  align-items: stretch;
-  height: 1.8em;
-}
-
-.songs button:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-  left: .1em;
-}
-
-.songs button:active {
-  background-color: #525252;
-  color: #fafafa;
-}
-
-.songs button.selected {
-  background-color: black;
-  color: white;
-}
-
-.songs button.selected:hover {
-  background-color: #505050;
-  color: white;
-}
-
-.songs button.selected:active {
-  background-color: black;
-  color: white;
-}
-
-.songs .item {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.songs .name {
-  align-self: center;
-}
+@import 'scss/globals';
+@import 'scss/list-and-detail';
+@import 'scss/songlist';
 
 
 
-// my styles
-:host {
-  display: grid;
-  border: solid 1px #ccc;
-  grid-template-columns: 30em 1fr;
-  height: 1100px;
-  margin-bottom: 3em;
-}
 
-.songList {
-  overflow-y: scroll;
-  padding: 2em;
-}
 
 .songDetail {
   padding: 2em;
 }
 
-.song--selected button {
-  border: solid 3px darkblue;
+
+
+.addNewSong {
+  border-top: solid 1px #ccc;
+  grid-column: 1 / -1;
 }
