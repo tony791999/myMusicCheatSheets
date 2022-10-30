@@ -67,8 +67,4 @@ export class SongsComponent implements OnInit {
     });
   }
 
-  // addSongSectionNote(individualNoteName: string, individualNoteNumberOfCounts: number) {
-  //   this.selectedSong?.songComposition?.
-  // }
-
 }
