@@ -1,0 +1,47 @@
+
+.songDetail {
+  padding: 2em;
+
+  &__goBack {
+    background-color: transparent;
+    transition: opacity 0.5s;
+    color: green;
+    text-decoration: underline;
+    padding: 1rem;
+    margin: 0 0 0 -1rem;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+  }
+
+}
+
+@media (max-width: 800px) {
+  .songDetail {
+    border-left: solid 1px #ccc;
+    position: absolute;
+    inset: 0 0 0 100%;
+    background: white;
+    transition: left 0.5s;
+    width: 100%;
+
+    &--songSelected {
+      inset: 0;
+    }
+
+  }
+
+}
+
+@media (min-width: 801px) {
+  .songDetail {
+
+    &__goBack {
+      display: none;
+    }
+
+  }
+
+}

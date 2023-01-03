@@ -1,7 +1,16 @@
 .listAndDetail {
   display: grid;
-
   grid-template-columns: 30em 1fr;
-
   flex: 1;
+}
+
+
+
+
+@media (max-width: 800px) {
+
+  .listAndDetail {
+    display: block;
+    position: relative;
+  }
 }

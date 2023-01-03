@@ -30,15 +30,15 @@ export class SongsComponent implements OnInit {
     this.selectedSong = song;
   }
 
-
-
-
-
+  backToList() {
+    this.selectedSong = undefined;
+  }
 
   addItem(songTitle: string, originalArtist: string) {
     this.songs.unshift({
       songTitle,
       originalArtist,
+      songComposition: [],
       readyToPerform: false
     });
   }

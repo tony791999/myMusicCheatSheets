@@ -1,0 +1,49 @@
+.songSections {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.songSection {
+  background-color: lightblue;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  &:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+
+  &__noteList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.25rem;
+
+    li {
+      background: royalblue;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    li.size--1 {
+      grid-column: span 1;
+    }
+
+    li.size--2 {
+      grid-column: span 2;
+    }
+
+    li.size--3 {
+      grid-column: span 3;
+    }
+
+    li.size--4 {
+      grid-column: span 4;
+    }
+
+  }
+
+}

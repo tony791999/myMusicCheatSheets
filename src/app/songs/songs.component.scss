@@ -1,18 +1,6 @@
 @import 'scss/globals';
 @import 'scss/list-and-detail';
-@import 'scss/songlist';
-
-
-
-
-
-.songDetail {
-  padding: 2em;
-}
-
-
-
-.addNewSong {
-  border-top: solid 1px #ccc;
-  grid-column: 1 / -1;
-}
+@import 'scss/song-list';
+@import 'scss/add-a-new-song';
+@import 'scss/song-detail';
+@import 'scss/song-sections';

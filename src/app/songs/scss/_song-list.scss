@@ -18,7 +18,7 @@
   &__songs {
     margin: 0 0.25rem;
     list-style-type: none;
-    padding: 0 0.25rem 0 1rem;
+    padding: 0.8rem 0.25rem 0 1rem;
     position: absolute;
     inset: 0;
     overflow-y: scroll;
@@ -41,41 +41,49 @@
       margin: 0;
       padding: 0;
       border-radius: 4px;
-      display: flex;
-      align-items: stretch;
       padding: 0.5rem;
+      text-align: left;
+      color: #444;
 
       &:hover {
-        color: #2c3a41;
-        background-color: #f5f5f5;
+        background-color: lightblue;
       }
 
-      &:active {
-        background-color: #525252;
-        color: #fafafa;
-      }
+      //&:active {
+      //  background-color: #525252;
+      //  color: #fafafa;
+      //}
 
-      &.selected {
-        background-color: black;
-        color: white;
-      }
-
-      &.selected:hover {
-        background-color: #505050;
-        color: white;
-      }
-
-      &.selected:active {
-        background-color: black;
-        color: white;
-      }
+      //&.selected {
+      //  background-color: black;
+      //  color: white;
+      //}
+      //
+      //&.selected:hover {
+      //  background-color: lightblue;
+      //  color: white;
+      //}
+      //
+      //&.selected:active {
+      //  background-color: black;
+      //  color: white;
+      //}
 
     }
 
   }
 
   &__song--selected button {
-    border: solid 3px darkblue;
+    background-color: #ccc !important;
   }
 
+}
+
+
+
+
+@media (max-width: 800px) {
+  .songlist {
+    height: 100%;
+  }
 }

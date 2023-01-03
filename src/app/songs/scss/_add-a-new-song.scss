@@ -1,0 +1,51 @@
+.addNewSong {
+  border-top: solid 1px #ccc;
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: auto auto 1fr;
+  align-items: end;
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  &__button {
+    width: 8em;
+    background-color: blue;
+    color: white;
+    transition: background-color 0.5s;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.45rem;
+    margin: 0;
+    height: 2.7rem;
+
+    &:hover {
+      background-color: darkblue;
+    }
+
+  }
+
+}
+
+
+
+
+@media (max-width: 800px) {
+
+  .addNewSong {
+
+    &__field {
+      grid-column: 1 / -1;
+    }
+
+    &__button {
+      margin-top: 0.8rem;
+    }
+
+  }
+
+}

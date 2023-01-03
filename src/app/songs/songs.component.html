@@ -6,28 +6,35 @@
       <ul class="songlist__songs">
         <li *ngFor="let song of songs" [class.songlist__song--selected]="song === selectedSong">
           <button type="button" (click)="onSelect(song)">
-            <span style="display: flex; align-items: center;">{{song.songTitle}}</span>
+            <span style="display: block;">{{song.songTitle}}</span>
+            <span style="display: block; font-size: 1rem; margin-top: 0.3rem;">By: {{song.originalArtist}}</span>
           </button>
         </li>
       </ul>
     </div>
   </div>
 
-  <!--<div style="display: none;">-->
-  <!--<div>-->
-  <!--  <label for="name">Song name: </label>-->
-  <!--  <input id="name" [(ngModel)]="song.songTitle" placeholder="name">-->
-  <!--</div>-->
+<!--  <div style="display: none;">-->
+<!--  <div>-->
+<!--    <label for="name">Song name: </label>-->
+<!--    <input id="name" [(ngModel)]="song.songTitle" placeholder="name">-->
+<!--  </div>-->
 
-  <!--<h2>{{song.songTitle}}</h2>-->
-  <!--<h2>{{song.readyToPerform}}</h2>-->
-  <!--</div>-->
+<!--  <h2>{{song.songTitle}}</h2>-->
+<!--  <h2>{{song.readyToPerform}}</h2>-->
+<!--  </div>-->
 
 
-  <div class="songDetail">
+  <div
+    [class.songDetail--songSelected]="selectedSong"
+    class="songDetail">
+
+    <button
+      class="songDetail__goBack"
+      (click)="backToList()">Back to List</button>
 
     <div *ngIf="selectedSong">
-    <h2>{{selectedSong.songTitle | uppercase}} Details</h2>
+    <h1>{{selectedSong.songTitle}} Details</h1>
     <div>original artist: {{selectedSong.originalArtist}}</div>
     <div>
       <label for="song-name">Song name: </label>
@@ -41,10 +48,10 @@
         id="addSongSection"
       />
       <button class="btn-primary" (click)="addSongSection(newSongSection.value, selectedSong.songComposition?.length ?? 0)">Add Song Section</button>
-      <ul>
-        <li *ngFor="let songSection of selectedSong.songComposition">
-          {{ songSection.songSectionName }}
-          {{ songSection.songSectionId }}
+      <ul class="songSections">
+        <li class="songSection" *ngFor="let songSection of selectedSong.songComposition">
+          <h2>{{ songSection.songSectionName }}</h2>
+<!--          {{ songSection.songSectionId }}-->
             <label style="display: block;" for="newSongSectionNote">Song Section Note</label>
             <input
               #newSongSectionNote
@@ -62,11 +69,13 @@
             id="newSongSectionNoteNumberOfCounts"
           />
           <button class="btn-primary" (click)="addSongSectionNote(newSongSectionNote.value, newSongSectionNoteNumberOfCounts.valueAsNumber, songSection.songSectionId)">Add Song Section Note</button>
-          <ul>
-            <li *ngFor="let songSectionNote of songSection.songSectionMusicNotes">
-              {{ songSectionNote.individualNoteName }}
-              {{ songSectionNote.individualNoteNumberOfCounts }}
+          <ul class="songSection__noteList">
+            <ng-container *ngFor="let songSectionNote of songSection.songSectionMusicNotes">
+            <li class="size--{{ songSectionNote.individualNoteNumberOfCounts }}">
+              {{ songSectionNote.individualNoteName }} -
+              {{ songSectionNote.individualNoteNumberOfCounts }} counts
             </li>
+            </ng-container>
           </ul>
         </li>
       </ul>
@@ -83,28 +92,30 @@
 
 <div class="addNewSong">
 
-<div>Add a song to the list</div>
+<h2 class="addNewSong__title">Add a Song to the List</h2>
 
-<div style="margin: 1em 0;">
+<div class="addNewSong__field">
   <label style="display: block;" for="addItemInput">Song Title</label>
   <input
     #newSongTitle
+    type="text"
     placeholder="add a song title"
     class="lg-text-input"
     id="addItemInput"
   />
 </div>
 
-<div style="margin: 1em 0;">
+<div class="addNewSong__field">
   <label style="display: block;" for="addOriginalArtistsInput">Original Artist</label>
   <input
     #newOriginalArtist
+    type="text"
     placeholder="add the original artist"
     class="lg-text-input"
     id="addOriginalArtistsInput"
   />
 </div>
 
-<button class="btn-primary" (click)="addItem(newSongTitle.value, newOriginalArtist.value)">Add</button>
+<button class="btn-primary addNewSong__button" (click)="addItem(newSongTitle.value, newOriginalArtist.value)">Add Song</button>
 
 </div>
