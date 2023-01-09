@@ -4,53 +4,160 @@ import {IndividualNote} from "./individual-note";
 
 export const SONGS: Song[] = [
   {
-    songTitle: 'My Old School',
-    originalArtist: 'Steely Dan',
+    songTitle: 'Yesterday',
+    originalArtist: 'Beatles',
     songComposition:  [
       {
         songSectionId: 0,
-        songSectionName: 'verse',
+        songSectionName: 'Verse',
         songSectionMusicNotes: [
           {
-            individualNoteName: 'G',
+            individualNoteName: 'F',
             individualNoteNumberOfCounts: 4
           },
           {
-            individualNoteName: 'E',
+            individualNoteName: 'Em',
+            individualNoteNumberOfCounts: 1
+          },
+          {
+            individualNoteName: 'A7',
+            individualNoteNumberOfCounts: 1
+          },
+          {
+            individualNoteName: 'D',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'Bb',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'F',
             individualNoteNumberOfCounts: 2
           }
         ] as IndividualNote[]
       },
       {
         songSectionId: 1,
-        songSectionName: 'chorus',
-        songSectionMusicNotes: [] as IndividualNote[]
+        songSectionName: 'Chorus',
+        songSectionMusicNotes: [
+          {
+            individualNoteName: 'Dm',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'A7',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'Bb',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'F',
+            individualNoteNumberOfCounts: 4
+          }
+        ] as IndividualNote[]
       }
     ] as SongSection[],
     readyToPerform: false
   },
-  { songTitle: 'Prelude in C', originalArtist: 'Bach', songComposition: [], readyToPerform: true },
-  { songTitle: 'Hey Jude', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Sailing', originalArtist: 'Christopher Cross', songComposition: [], readyToPerform: true },
-  { songTitle: 'Wave', originalArtist: 'Antonio Carlos Jobim', songComposition: [], readyToPerform: true },
-  { songTitle: 'Tuxedo Junction', originalArtist: 'Glenn Miller', songComposition: [], readyToPerform: true },
-  { songTitle: 'Dancing Queen', originalArtist: 'Abba', songComposition: [], readyToPerform: true },
-  { songTitle: 'Whats Up', originalArtist: '4 Non Blondes', songComposition: [], readyToPerform: true },
-  { songTitle: 'Imagine', originalArtist: 'John Lennon', songComposition: [], readyToPerform: true },
-  { songTitle: 'Yesterday', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Long and Winding Road', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Time', originalArtist: 'Pink Floyd', songComposition: [], readyToPerform: true },
-  { songTitle: 'Prelude in C', originalArtist: 'Bach', songComposition: [], readyToPerform: true },
-  { songTitle: 'Hey Jude', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Sailing', originalArtist: 'Christopher Cross', songComposition: [], readyToPerform: true },
-  { songTitle: 'Wave', originalArtist: 'Antonio Carlos Jobim', songComposition: [], readyToPerform: true },
-  { songTitle: 'Tuxedo Junction', originalArtist: 'Glenn Miller', songComposition: [], readyToPerform: true },
-  { songTitle: 'Dancing Queen', originalArtist: 'Abba', songComposition: [], readyToPerform: true },
-  { songTitle: 'Whats Up', originalArtist: '4 Non Blondes', songComposition: [], readyToPerform: true },
-  { songTitle: 'Imagine', originalArtist: 'John Lennon', songComposition: [], readyToPerform: true },
-  { songTitle: 'Yesterday', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Long and Winding Road', originalArtist: 'the Beatles', songComposition: [], readyToPerform: true },
-  { songTitle: 'Time', originalArtist: 'Pink Floyd', songComposition: [], readyToPerform: true },
-  { songTitle: 'Prelude in C', originalArtist: 'Bach', songComposition: [], readyToPerform: true },
-  { songTitle: 'Turkish March', originalArtist: 'Mozart', songComposition: [], readyToPerform: false }
+  { songTitle: 'Whats Up', originalArtist: '4 non blondes',
+    songComposition: [
+      {
+        songSectionId: 0,
+        songSectionName: 'Verse',
+        songSectionMusicNotes: [
+          {
+            individualNoteName: 'A',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'Bm',
+            individualNoteNumberOfCounts: 1
+          },
+          {
+            individualNoteName: 'D',
+            individualNoteNumberOfCounts: 1
+          },
+          {
+            individualNoteName: 'A',
+            individualNoteNumberOfCounts: 4
+          },
+        ] as IndividualNote[]
+      },
+      {
+        songSectionId: 1,
+        songSectionName: 'Chorus',
+        songSectionMusicNotes: [
+          {
+            individualNoteName: 'A7',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'Bm',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'D',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'A7',
+            individualNoteNumberOfCounts: 4
+          }
+        ] as IndividualNote[]
+      }
+    ], readyToPerform: true },
+  { songTitle: 'Hey Jude', originalArtist: 'the Beatles', songComposition: [
+      {
+        songSectionId: 0,
+        songSectionName: 'Verse',
+        songSectionMusicNotes: [
+          {
+            individualNoteName: 'F',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'C',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'Bb',
+            individualNoteNumberOfCounts: 4
+          },
+          {
+            individualNoteName: 'F',
+            individualNoteNumberOfCounts: 4
+          },
+        ] as IndividualNote[]
+      },
+      {
+        songSectionId: 1,
+        songSectionName: 'Chorus',
+        songSectionMusicNotes: [
+          {
+            individualNoteName: 'Bb',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'a',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'G',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'F',
+            individualNoteNumberOfCounts: 2
+          },
+          {
+            individualNoteName: 'C',
+            individualNoteNumberOfCounts: 4
+          }
+        ] as IndividualNote[]
+      }
+    ], readyToPerform: true }
+
 ];

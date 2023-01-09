@@ -28,61 +28,88 @@
   <div
     [class.songDetail--songSelected]="selectedSong"
     class="songDetail">
+    <div class="songDetail__inner">
 
-    <button
-      class="songDetail__goBack"
-      (click)="backToList()">Back to List</button>
+      <button
+        class="songDetail__goBack"
+        (click)="backToList()">Back to List</button>
 
-    <div *ngIf="selectedSong">
-    <h1>{{selectedSong.songTitle}} Details</h1>
-    <div>original artist: {{selectedSong.originalArtist}}</div>
-    <div>
-      <label for="song-name">Song name: </label>
-      <input id="song-name" [(ngModel)]="selectedSong.songTitle" placeholder="name">
-    </div>
-      <label style="display: block;" for="addSongSection">Song Section</label>
-      <input
-        #newSongSection
-        placeholder="add a song section"
-        class="lg-text-input"
-        id="addSongSection"
-      />
-      <button class="btn-primary" (click)="addSongSection(newSongSection.value, selectedSong.songComposition?.length ?? 0)">Add Song Section</button>
-      <ul class="songSections">
-        <li class="songSection" *ngFor="let songSection of selectedSong.songComposition">
-          <h2>{{ songSection.songSectionName }}</h2>
-<!--          {{ songSection.songSectionId }}-->
-            <label style="display: block;" for="newSongSectionNote">Song Section Note</label>
+      <div *ngIf="selectedSong">
+      <h1 class="songDetail__title">{{selectedSong.songTitle}}</h1>
+      <h3 class="songDetail__originalArtist">By: {{selectedSong.originalArtist}}</h3>
+
+  <!--    <div>-->
+  <!--      <label for="song-name">Song name: </label>-->
+  <!--      <input id="song-name" [(ngModel)]="selectedSong.songTitle" placeholder="name">-->
+  <!--    </div>-->
+
+        <ul class="songSections">
+          <li class="songSection" *ngFor="let songSection of selectedSong.songComposition">
+            <h2 class="songSection__title">{{ songSection.songSectionName }}</h2>
+  <!--          {{ songSection.songSectionId }}-->
+
+              <div class="songSection__form">
+                <div class="songSection__formField">
+                  <label class="globalFormLabel" for="newSongSectionNote">Musical Note</label>
+                  <input
+                    #newSongSectionNote
+                    type="text"
+                    placeholder="add a song section note"
+                    class="lg-text-input"
+                    id="newSongSectionNote"
+                  />
+                </div>
+
+                <div class="songSection__formField">
+                  <label class="globalFormLabel" for="newSongSectionNoteNumberOfCounts">Number Of Counts Note is Played</label>
+                  <input
+                    #newSongSectionNoteNumberOfCounts
+                    placeholder="add number of counts"
+                    class="lg-text-input"
+                    type="number"
+                    id="newSongSectionNoteNumberOfCounts"
+                  />
+                </div>
+
+                <button class="btn-primary" (click)="addSongSectionNote(newSongSectionNote.value, newSongSectionNoteNumberOfCounts.valueAsNumber, songSection.songSectionId)">Add Note</button>
+              </div>
+
+            <h3 class="songSection__noteListTitle">Notes</h3>
+                <ul class="songSection__noteList">
+              <ng-container *ngFor="let songSectionNote of songSection.songSectionMusicNotes">
+              <li class="size--{{ songSectionNote.individualNoteNumberOfCounts }}">
+                {{ songSectionNote.individualNoteName }} -
+                {{ songSectionNote.individualNoteNumberOfCounts }} counts
+              </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="songDetail__addNewSection">
+          <div class="songDetail__addNewSectionFormField">
+            <label class="globalFormLabel" for="addSongSection">Song Section</label>
             <input
-              #newSongSectionNote
-              placeholder="add a song section note"
+              #newSongSection
+              type="text"
+              placeholder="Verse, Chorus, Bridge, etc"
               class="lg-text-input"
-              id="newSongSectionNote"
+              id="addSongSection"
             />
-          <label style="display: block;" for="newSongSectionNoteNumberOfCounts">Song Section Note Number Of Counts</label>
+          </div>
+          <button class="btn-primary songDetail__addNewSectionButton" (click)="addSongSection(newSongSection.value, selectedSong.songComposition?.length ?? 0)">Add Song Section</button>
+        </div>
 
-          <input
-            #newSongSectionNoteNumberOfCounts
-            placeholder="add number of counts"
-            class="lg-text-input"
-            type="number"
-            id="newSongSectionNoteNumberOfCounts"
-          />
-          <button class="btn-primary" (click)="addSongSectionNote(newSongSectionNote.value, newSongSectionNoteNumberOfCounts.valueAsNumber, songSection.songSectionId)">Add Song Section Note</button>
-          <ul class="songSection__noteList">
-            <ng-container *ngFor="let songSectionNote of songSection.songSectionMusicNotes">
-            <li class="size--{{ songSectionNote.individualNoteNumberOfCounts }}">
-              {{ songSectionNote.individualNoteName }} -
-              {{ songSectionNote.individualNoteNumberOfCounts }} counts
-            </li>
-            </ng-container>
-          </ul>
-        </li>
-      </ul>
-    </div>
 
-    <div *ngIf="!selectedSong" style="font-style: italic; color: #ccc; font-size: 1.3rem;">
-      -- There is no song selected
+
+      </div>
+
+
+
+      <div *ngIf="!selectedSong" style="font-style: italic; color: #ccc; font-size: 1.3rem;">
+        -- There is no song selected
+      </div>
+
     </div>
 
   </div>
@@ -95,7 +122,7 @@
 <h2 class="addNewSong__title">Add a Song to the List</h2>
 
 <div class="addNewSong__field">
-  <label style="display: block;" for="addItemInput">Song Title</label>
+  <label class="globalFormLabel" for="addItemInput">Song Title</label>
   <input
     #newSongTitle
     type="text"
@@ -106,7 +133,7 @@
 </div>
 
 <div class="addNewSong__field">
-  <label style="display: block;" for="addOriginalArtistsInput">Original Artist</label>
+  <label class="globalFormLabel" for="addOriginalArtistsInput">Original Artist</label>
   <input
     #newOriginalArtist
     type="text"
@@ -116,6 +143,6 @@
   />
 </div>
 
-<button class="btn-primary addNewSong__button" (click)="addItem(newSongTitle.value, newOriginalArtist.value)">Add Song</button>
+<button class="btn-primary addNewSong__button" (click)="addItem(newSongTitle.value, newOriginalArtist.value)">New Song</button>
 
 </div>

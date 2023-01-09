@@ -1,7 +1,10 @@
+@import 'mixins';
+
+
 .addNewSong {
   border-top: solid 1px #ccc;
   grid-column: 1 / -1;
-  padding: 1.5rem;
+  padding: 1.3rem 1.7rem 1.5rem;
   display: grid;
   gap: 1em;
   grid-template-columns: auto auto 1fr;
@@ -13,20 +16,7 @@
   }
 
   &__button {
-    width: 8em;
-    background-color: blue;
-    color: white;
-    transition: background-color 0.5s;
-    font-weight: bold;
-    font-size: 1.5rem;
-    padding: 0.45rem;
-    margin: 0;
-    height: 2.7rem;
-
-    &:hover {
-      background-color: darkblue;
-    }
-
+    @include button;
   }
 
 }

@@ -1,6 +1,15 @@
+@import 'mixins';
+
 
 .songDetail {
-  padding: 2em;
+  position: relative;
+
+  &__inner {
+    position: absolute;
+    inset: 0;
+    padding: 2em;
+    overflow-y: scroll;
+  }
 
   &__goBack {
     background-color: transparent;
@@ -12,6 +21,29 @@
 
     &:hover {
       opacity: 0.7;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 0.3rem;
+    color: #444;
+  }
+
+  &__originalArtist {
+    margin-top: 0;
+  }
+
+  &__addNewSection {
+    display: grid;
+    gap: 1rem;
+    align-items: end;
+    grid-template-columns: auto 1fr;
+    margin-top: 1rem;
+
+    button {
+      @include button;
+      width: 16rem;
     }
 
   }
@@ -40,6 +72,18 @@
 
     &__goBack {
       display: none;
+    }
+
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  .songDetail {
+
+    &__addNewSectionFormField {
+      grid-column: 1 / -1;
     }
 
   }

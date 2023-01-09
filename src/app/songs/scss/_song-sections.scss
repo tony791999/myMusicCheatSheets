@@ -5,12 +5,30 @@
 }
 
 .songSection {
-  background-color: lightblue;
+  background-color: #e7e7e7;
   border-radius: 0.5rem;
   padding: 1rem;
 
   &:not(:first-child) {
     margin-top: 0.5rem;
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: 1.7rem;
+    margin-bottom: 0.7rem;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: end;
+    gap: 1rem;
+
+    button {
+      @include button;
+    }
+
   }
 
   &__noteList {
@@ -21,8 +39,15 @@
     grid-template-columns: repeat(12, 1fr);
     gap: 0.25rem;
 
+    &Title {
+      border-top: dotted 1px #aaa;
+      font-size: 1.3rem;
+      padding-top: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
     li {
-      background: royalblue;
+      background-color: #666;
       color: white;
       padding: 0.5rem;
       border-radius: 0.5rem;
@@ -44,6 +69,74 @@
       grid-column: span 4;
     }
 
+    li.size--5 {
+      grid-column: span 5;
+    }
+
+    li.size--6 {
+      grid-column: span 6;
+    }
+
+    li.size--7 {
+      grid-column: span 7;
+    }
+
+    li.size--8 {
+      grid-column: span 8;
+    }
+
+    li.size--9 {
+      grid-column: span 9;
+    }
+
+    li.size--10 {
+      grid-column: span 10;
+    }
+
+    li.size-11 {
+      grid-column: span 11;
+    }
+
+    li.size--12 {
+      grid-column: span 12;
+    }
+
+    li.size--13 {
+      grid-column: span 13;
+    }
+
+    li.size--14 {
+      grid-column: span 14;
+    }
+
+    li.size--15 {
+      grid-column: span 15;
+    }
+
+    li.size--16 {
+      grid-column: span 16;
+    }
+
   }
 
 }
+
+
+
+@media (max-width: 1300px) {
+
+  .songSection {
+
+    &__formField {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      margin-top: 0rem;
+    }
+
+  }
+
+}
+
+
