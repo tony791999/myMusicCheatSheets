@@ -9,6 +9,11 @@
   border-radius: 0.5rem;
   padding: 1rem;
 
+  input[type="text"],
+  input[type="number"] {
+    background: white;
+  }
+
   &:not(:first-child) {
     margin-top: 0.5rem;
   }

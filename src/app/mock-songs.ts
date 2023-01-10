@@ -5,7 +5,7 @@ import {IndividualNote} from "./individual-note";
 export const SONGS: Song[] = [
   {
     songTitle: 'Yesterday',
-    originalArtist: 'Beatles',
+    originalArtist: 'the Beatles',
     songComposition:  [
       {
         songSectionId: 0,

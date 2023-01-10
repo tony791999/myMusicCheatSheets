@@ -13,12 +13,6 @@ import {IndividualNote} from "../individual-note";
 })
 export class SongsComponent implements OnInit {
   songs = SONGS;
-  // songComposition = this.songs.;
-
-  // song: Song = {
-  //   songTitle: 'Stairway to Heaven',
-  //   readyToPerform: false
-  // }
 
   constructor() { }
 
@@ -52,17 +46,12 @@ export class SongsComponent implements OnInit {
   }
 
   addSongSectionNote(individualNoteName: string, individualNoteNumberOfCounts: number, activeSongSectionId: number) {
-    console.log(activeSongSectionId + 'activeSongSectionId');
     this.selectedSong?.songComposition?.forEach(function (value, index, array){
-      console.log(value.songSectionId + 'value songSectionId');
       if (activeSongSectionId == value.songSectionId) {
-        console.log(value.songSectionId + 'entered if clause');
-        console.log(value.songSectionMusicNotes?.length + 'lengthBefore');
         value.songSectionMusicNotes?.push({
           individualNoteName,
           individualNoteNumberOfCounts
         });
-        console.log(value.songSectionMusicNotes?.length + 'lengthAfter');
       }
     });
   }
