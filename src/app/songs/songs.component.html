@@ -4,11 +4,13 @@
     <h2 class="songlist__title">My Songs</h2>
     <div class="songlist__wrapper">
       <ul class="songlist__songs">
-        <li *ngFor="let song of songs" [class.songlist__song--selected]="song === selectedSong">
+        @for (song of songs; track song.songTitle) {
+        <li [class.songlist__song--selected]="song === selectedSong">
           <button type="button" (click)="onSelect(song)">
             <span style="display: flex; align-items: center;">{{song.songTitle}}</span>
           </button>
         </li>
+        }
       </ul>
     </div>
   </div>
@@ -26,7 +28,8 @@
 
   <div class="songDetail">
 
-    <div *ngIf="selectedSong">
+    @if (selectedSong) {
+    <div>
     <h2>{{selectedSong!.songTitle | uppercase}} Details</h2>
     <div>original artist: {{selectedSong!.originalArtist}}</div>
     <div>
@@ -75,10 +78,11 @@
         </li>
       </ul>
     </div>
-
-    <div *ngIf="!selectedSong" style="font-style: italic; color: #ccc; font-size: 1.3rem;">
+  } @else {
+    <div style="font-style: italic; color: ccc; font-size: 1.3rem;">
       -- There is no song selected
     </div>
+  }
 
   </div>
 
