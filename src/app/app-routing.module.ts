@@ -1,10 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ApplicationConfig } from '@angular/core';
+import { Routes } from '@angular/router';
+import { provideRouter } from '@angular/router';
+import { SongsComponent } from './songs/songs.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/songs', pathMatch: 'full' },
+  { path: 'songs', component: SongsComponent }
+];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes)
+  ]
+};
