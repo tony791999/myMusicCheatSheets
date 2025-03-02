@@ -43,10 +43,22 @@ export class SongsComponent implements OnInit {
     });
   }
 
-  addSongSection(songSectionName: string, songSectionId: number) {
-    this.selectedSong?.songComposition?.push({
+  addSongSection(songSectionName: string) {
+    if (!this.selectedSong) {
+      return; // Exit if no song is selected
+    }
+
+    if (!this.selectedSong.songComposition) {
+      this.selectedSong.songComposition = [];
+    }
+    
+    const newId = this.selectedSong.songComposition.length > 0 
+      ? Math.max(...this.selectedSong.songComposition.map(section => section.songSectionId)) + 1 
+      : 0;
+    
+    this.selectedSong.songComposition.push({
       songSectionName,
-      songSectionId,
+      songSectionId: newId,
       songSectionMusicNotes: []
     });
   }
