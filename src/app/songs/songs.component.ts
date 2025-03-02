@@ -7,9 +7,10 @@ import {IndividualNote} from "../individual-note";
 // import {SONGCOMPOSITION} from '../mock-song-composition';
 
 @Component({
-  selector: 'app-songs',
-  templateUrl: './songs.component.html',
-  styleUrls: ['./songs.component.scss']
+    selector: 'app-songs',
+    templateUrl: './songs.component.html',
+    styleUrls: ['./songs.component.scss'],
+    standalone: false
 })
 export class SongsComponent implements OnInit {
   songs = SONGS;
