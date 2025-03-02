@@ -5,12 +5,16 @@ import {SONGS} from '../mock-songs';
 import {findIndex} from "rxjs";
 import {IndividualNote} from "../individual-note";
 // import {SONGCOMPOSITION} from '../mock-song-composition';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-songs',
     templateUrl: './songs.component.html',
     styleUrls: ['./songs.component.scss'],
-    standalone: false
+    imports: [CommonModule, FormsModule],
+    standalone: true
 })
 export class SongsComponent implements OnInit {
   songs = SONGS;

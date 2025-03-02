@@ -27,11 +27,11 @@
   <div class="songDetail">
 
     <div *ngIf="selectedSong">
-    <h2>{{selectedSong.songTitle | uppercase}} Details</h2>
-    <div>original artist: {{selectedSong.originalArtist}}</div>
+    <h2>{{selectedSong!.songTitle | uppercase}} Details</h2>
+    <div>original artist: {{selectedSong!.originalArtist}}</div>
     <div>
       <label for="song-name">Song name: </label>
-      <input id="song-name" [(ngModel)]="selectedSong.songTitle" placeholder="name">
+      <input id="song-name" [(ngModel)]="selectedSong!.songTitle" placeholder="name">
     </div>
       <label style="display: block;" for="addSongSection">Song Section</label>
       <input
