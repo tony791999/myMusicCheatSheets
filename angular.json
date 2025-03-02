@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "my-music-cheat-sheets:build:production"
+              "buildTarget": "my-music-cheat-sheets:build:production"
             },
             "development": {
-              "browserTarget": "my-music-cheat-sheets:build:development"
+              "buildTarget": "my-music-cheat-sheets:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-music-cheat-sheets:build"
+            "buildTarget": "my-music-cheat-sheets:build"
           }
         },
         "test": {
