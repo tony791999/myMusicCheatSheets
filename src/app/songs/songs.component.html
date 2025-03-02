@@ -49,7 +49,9 @@
           Add Song Section
       </button>
       <ul>
-        <li *ngFor="let songSection of selectedSong.songComposition">
+
+        @for (songSection of selectedSong.songComposition; track songSection.songSectionId) {
+        <li>
           {{ songSection.songSectionName }}
           {{ songSection.songSectionId }}
             <label style="display: block;" for="newSongSectionNote">Song Section Note</label>
@@ -70,16 +72,19 @@
           />
           <button class="btn-primary" (click)="addSongSectionNote(newSongSectionNote.value, newSongSectionNoteNumberOfCounts.valueAsNumber, songSection.songSectionId)">Add Song Section Note</button>
           <ul>
-            <li *ngFor="let songSectionNote of songSection.songSectionMusicNotes">
+            @for (songSectionNote of songSection.songSectionMusicNotes; track songSectionNote.individualNoteName) {
+            <li>
               {{ songSectionNote.individualNoteName }}
               {{ songSectionNote.individualNoteNumberOfCounts }}
             </li>
+            }
           </ul>
         </li>
+        }
       </ul>
     </div>
   } @else {
-    <div style="font-style: italic; color: ccc; font-size: 1.3rem;">
+    <div style="font-style: italic; color: #ccc; font-size: 1.3rem;">
       -- There is no song selected
     </div>
   }
